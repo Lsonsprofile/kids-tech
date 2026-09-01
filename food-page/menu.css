@@ -1,0 +1,67 @@
+
+
+.menu-page-header {
+    background-color: var(--hero-background);
+
+    padding: 80px 30px;
+
+    text-align: center;
+}
+
+
+.menu-page-header h1 {
+    color: var(--main-color);
+
+    font-size: 3.5rem;
+
+    margin-bottom: 15px;
+}
+
+
+.menu-page-header p {
+    color: #444444;
+
+    font-size: 1.2rem;
+}
+
+
+/* ==============================
+   MENU CATEGORY
+   ============================== */
+
+.menu-category {
+    padding: 60px 30px;
+}
+
+
+.menu-category:nth-child(even) {
+    background-color: var(--white);
+}
+
+
+/* ==============================
+   MENU CATEGORY MOBILE
+   ============================== */
+
+@media (max-width: 600px) {
+
+    .menu-page-header {
+        padding: 50px 20px;
+    }
+
+
+    .menu-page-header h1 {
+        font-size: 2.5rem;
+    }
+
+
+    .menu-page-header p {
+        font-size: 1rem;
+    }
+
+
+    .menu-category {
+        padding: 40px 20px;
+    }
+
+}

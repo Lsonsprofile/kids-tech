@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!-- Tells the browser that this document uses modern HTML5. -->
+
+<html lang="en">
+<!-- Starts the HTML document.
+     lang="en" tells browsers and assistive technologies that the page is written in English. -->
+
+<head>
+    <!-- Contains information about the webpage that is not normally displayed directly on the page. -->
+
+    <meta charset="UTF-8">
+    <!-- Sets the character encoding to UTF-8.
+         This allows the webpage to correctly display many characters, symbols, and languages. -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Makes the webpage adapt properly to different screen sizes.
+         width=device-width makes the page width match the device's screen width.
+         initial-scale=1.0 sets the initial zoom level to 100%. -->
+
+    <title>Canvas with Joystick</title>
+    <!-- Sets the title displayed on the browser tab. -->
+
+    <link rel="stylesheet" href="style.css">
+    <!-- Connects this HTML document to the external CSS file named style.css.
+         The CSS file controls the appearance and layout of the webpage. -->
+
+</head>
+<!-- Ends the head section. -->
+
+<body>
+<!-- Starts the body section.
+     Everything inside the body is part of the webpage's visible content. -->
+
+  <div class="game-container">
+  <!-- Creates a div that acts as the main container for the game.
+       The class "game-container" allows CSS to style this container. -->
+
+    <div id="joystick-container">
+    <!-- Creates a container specifically for the joystick and its help button.
+         The id "joystick-container" uniquely identifies this element. -->
+
+        <div id="joystick-base">
+        <!-- Creates the base/background area of the joystick. -->
+
+            <div id="joystick-handle"></div>
+            <!-- Creates the joystick handle.
+                 This is the part of the joystick that the player can move. -->
+
+        </div>
+        <!-- Ends the joystick-base div. -->
+
+        <!-- MOVED: New Help Button is now inside joystick-container -->
+        <!-- This is an HTML comment.
+             It is written for developers and is not displayed on the webpage.
+             It explains that the Help button was moved inside the joystick container. -->
+
+        <button id="helpButton" class="overlay-button">?</button>
+        <!-- Creates a clickable button.
+             id="helpButton" uniquely identifies the button.
+             class="overlay-button" allows CSS to style it.
+             The question mark (?) is the text displayed inside the button. -->
+
+    </div>
+    <!-- Ends the joystick-container div. -->
+    
+    <div class="game-box">
+    <!-- Creates a container for the main game area.
+         The class "game-box" allows CSS to control its appearance and layout. -->
+
+      <canvas id="myCanvas" width="600" height="400"></canvas>
+      <!-- Creates an HTML canvas where JavaScript can draw the game.
+           id="myCanvas" gives JavaScript a way to find the canvas.
+           width="600" sets the canvas drawing width to 600 pixels.
+           height="400" sets the canvas drawing height to 400 pixels. -->
+      
+      <!-- Instructions Overlay remains in game-box for full canvas coverage -->
+      <!-- Developer comment explaining that the instructions overlay is inside
+           the game-box so it can cover the canvas area. -->
+
+      <div id="instructionsOverlay" class="game-overlay">
+      <!-- Creates an overlay that can appear on top of the game.
+           id="instructionsOverlay" uniquely identifies the overlay.
+           class="game-overlay" allows CSS to style and position it. -->
+
+        <h2>How to Play</h2>
+        <!-- Creates a level-2 heading displaying "How to Play". -->
+
+        <p>Use the joystick to move your glowing circle.</p>
+        <!-- Creates a paragraph explaining how the player controls the game. -->
+
+        <p>Avoid the incoming colored circles!</p>
+        <!-- Creates a paragraph telling the player to avoid the enemy circles. -->
+
+        <p>Your score increases the longer you survive.</p>
+        <!-- Creates a paragraph explaining how the player's score works. -->
+
+        <p>Lose health if you touch an enemy.</p>
+        <!-- Creates a paragraph explaining what happens when the player touches an enemy. -->
+
+        <p>Good luck!</p>
+        <!-- Creates a paragraph displaying a short message to the player. -->
+
+        <button id="closeInstructionsButton" class="overlay-close-button">Got It!</button>
+        <!-- Creates a button that allows the player to close the instructions.
+             id="closeInstructionsButton" uniquely identifies the button.
+             class="overlay-close-button" allows CSS to style it.
+             "Got It!" is the text displayed inside the button. -->
+
+      </div>
+      <!-- Ends the instructions overlay. -->
+
+    </div>
+    <!-- Ends the game-box container. -->
+
+  </div>
+  <!-- Ends the main game-container. -->
+
+  <script src="emma.js"></script>
+  <!-- Loads the external JavaScript file named script.js.
+       JavaScript can use this file to control the game's behavior,
+       such as the joystick, player movement, enemies, score, health, and buttons. -->
+
+</body>
+<!-- Ends the body section. -->
+
+</html>
+<!-- Ends the HTML document. -->

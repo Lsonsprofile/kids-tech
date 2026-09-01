@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coding Examination - HTML • CSS • JavaScript</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="exam-header" id="exam-header" hidden>
+    <div class="header-top">
+      <h1 class="exam-title">CODING EXAMINATION</h1>
+      <p class="exam-subtitle">HTML • CSS • JAVASCRIPT</p>
+    </div>
+    <div class="header-info">
+      <div class="info-item">
+        <span class="label">Student:</span>
+        <span id="display-student-name">—</span>
+      </div>
+      <div class="info-item">
+        <span class="label">Exam ID:</span>
+        <span id="display-exam-id">—</span>
+      </div>
+      <div class="info-item timer-item">
+        <span class="label">Time Remaining:</span>
+        <span id="timer-display" class="timer">30:00</span>
+      </div>
+      <div class="info-item">
+        <span class="label">Question:</span>
+        <span id="question-counter">1 / 20</span>
+      </div>
+      <div class="info-item">
+        <span class="label">Warnings:</span>
+        <span id="warning-count">0</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- Start / Instructions Screen -->
+    <section id="start-screen" class="screen active">
+      <div class="card start-card">
+        <h2>Examination Instructions</h2>
+        <ul class="rules-list">
+          <li>Do not copy examination content.</li>
+          <li>Do not use right-click.</li>
+          <li>Do not leave the examination tab.</li>
+          <li>Do not exit fullscreen mode.</li>
+          <li>Do not use browser shortcuts to copy or inspect content.</li>
+          <li>Your examination activity may be recorded.</li>
+          <li>Your progress is automatically saved.</li>
+          <li>Repeated violations may result in examination termination.</li>
+        </ul>
+
+        <div class="form-group">
+          <label for="student-name-input">Enter your full name</label>
+          <input type="text" id="student-name-input" placeholder="e.g. Emmanuel Okoro" maxlength="60" autocomplete="name" required>
+        </div>
+
+        <button type="button" id="start-exam-btn" class="btn btn-primary">Start Examination</button>
+        <p class="note">Client-side protections are deterrents only. They do not provide complete security.</p>
+      </div>
+    </section>
+
+    <!-- Examination Screen -->
+    <section id="exam-screen" class="screen" hidden>
+      <div class="progress-container">
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="progress-bar" style="width: 5%"></div>
+        </div>
+        <span id="progress-text">Question 1 of 20 — 5%</span>
+      </div>
+
+      <div class="card question-card">
+        <div class="question-meta">
+          <span id="question-category" class="badge">HTML</span>
+          <span id="question-type-badge" class="badge type-badge">Objective</span>
+        </div>
+        <h2 id="question-text" class="question-text">Loading question…</h2>
+
+        <!-- Objective options container -->
+        <div id="options-container" class="options-container" role="radiogroup" aria-labelledby="question-text"></div>
+
+        <!-- Theory answer input -->
+        <div id="theory-container" class="theory-container" hidden>
+          <label for="theory-answer" class="sr-only">Your answer</label>
+          <textarea id="theory-answer" rows="3" placeholder="Type your answer here…" spellcheck="false"></textarea>
+          <p class="theory-hint">Enter the exact tag, property, or code as expected.</p>
+        </div>
+
+        <div class="save-indicator" id="save-indicator" aria-live="polite"></div>
+      </div>
+
+      <div class="nav-buttons">
+        <button type="button" id="prev-btn" class="btn btn-secondary" disabled>Previous</button>
+        <button type="button" id="next-btn" class="btn btn-primary">Next</button>
+      </div>
+    </section>
+
+    <!-- Results Screen -->
+    <section id="results-screen" class="screen" hidden>
+      <div class="card results-card">
+        <h2 id="results-title">Examination Complete</h2>
+        <div class="results-grid">
+          <div class="result-item">
+            <span class="result-label">Student</span>
+            <span id="result-student">—</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">Exam ID</span>
+            <span id="result-exam-id">—</span>
+          </div>
+          <div class="result-item highlight">
+            <span class="result-label">Score</span>
+            <span id="result-score">—</span>
+          </div>
+          <div class="result-item highlight">
+            <span class="result-label">Percentage</span>
+            <span id="result-percentage">—</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">Correct</span>
+            <span id="result-correct">—</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">Wrong</span>
+            <span id="result-wrong">—</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">Unanswered</span>
+            <span id="result-unanswered">—</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">Warnings</span>
+            <span id="result-warnings">—</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">Time Used</span>
+            <span id="result-time-used">—</span>
+          </div>
+        </div>
+        <button type="button" id="new-attempt-btn" class="btn btn-primary">Start New Attempt</button>
+      </div>
+    </section>
+
+    <!-- Terminated Screen -->
+    <section id="terminated-screen" class="screen" hidden>
+      <div class="card terminated-card">
+        <h2>Examination Terminated</h2>
+        <p>The maximum number of examination violations has been reached.</p>
+        <p>Your examination has been submitted automatically.</p>
+        <button type="button" id="terminated-new-btn" class="btn btn-primary">Start New Attempt</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Attempt History -->
+  <section id="history-section" class="history-section">
+    <h2>Attempt History</h2>
+    <div id="history-list" class="history-list">
+      <p class="empty-history">No previous attempts yet.</p>
+    </div>
+  </section>
+
+  <!-- Warning Modal / Overlay -->
+  <div id="warning-overlay" class="overlay" hidden>
+    <div class="warning-modal" role="alertdialog" aria-labelledby="warning-title" aria-describedby="warning-message">
+      <div class="warning-icon">⚠</div>
+      <h3 id="warning-title">Examination Warning</h3>
+      <p id="warning-message">This action has been recorded.</p>
+      <p class="warning-count-text">Warnings: <span id="modal-warning-count">1</span> / 3</p>
+      <button type="button" id="warning-close-btn" class="btn btn-warning">Understood</button>
+    </div>
+  </div>
+
+  <!-- Submit Confirmation Modal -->
+  <div id="submit-overlay" class="overlay" hidden>
+    <div class="modal" role="dialog" aria-labelledby="submit-title">
+      <h3 id="submit-title">Submit Examination?</h3>
+      <p id="submit-message">You have answered X of Y questions.</p>
+      <p id="unanswered-note" class="unanswered-note" hidden></p>
+      <div class="modal-actions">
+        <button type="button" id="continue-exam-btn" class="btn btn-secondary">Continue Exam</button>
+        <button type="button" id="confirm-submit-btn" class="btn btn-danger">Submit Examination</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Restored Session Toast -->
+  <div id="restore-toast" class="toast" hidden>
+    <strong>Examination Restored</strong>
+    <span id="restore-message">Your previous session has been restored.</span>
+  </div>
+
+  <script src="js/exam.js"></script>
+</body>
+</html>

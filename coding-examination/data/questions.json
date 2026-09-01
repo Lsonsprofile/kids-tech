@@ -1,0 +1,248 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "category": "HTML",
+      "type": "objective",
+      "question": "What does the acronym HTML stand for?",
+      "options": [
+        "Hyper Text Markup Language",
+        "High Tech Modern Language",
+        "Hyperlink and Text Markup Language",
+        "Hyper Text Machine Language",
+        "High Transfer Markup Language"
+      ],
+      "answer": "Hyper Text Markup Language",
+      "explanation": "HTML stands for Hyper Text Markup Language. It is the standard markup language for creating web pages."
+    },
+    {
+      "id": 2,
+      "category": "HTML",
+      "type": "objective",
+      "question": "Which HTML element is used to create the largest heading on a page?",
+      "options": [
+        "<heading>",
+        "<h1>",
+        "<h0>",
+        "<head>",
+        "<big>"
+      ],
+      "answer": "<h1>",
+      "explanation": "The <h1> element defines the largest heading. Headings range from <h1> (most important) to <h6> (least important)."
+    },
+    {
+      "id": 3,
+      "category": "HTML",
+      "type": "theory",
+      "question": "Write the correct HTML tag to create a paragraph.",
+      "answer": "<p>",
+      "explanation": "The <p> element defines a paragraph in HTML."
+    },
+    {
+      "id": 4,
+      "category": "HTML",
+      "type": "objective",
+      "question": "Which of the following is a self-closing (empty) HTML element?",
+      "options": [
+        "<p>",
+        "<div>",
+        "<img>",
+        "<h1>",
+        "<section>"
+      ],
+      "answer": "<img>",
+      "explanation": "The <img> element is an empty element — it has no closing tag. Other empty elements include <br>, <hr>, and <input>."
+    },
+    {
+      "id": 5,
+      "category": "HTML",
+      "type": "theory",
+      "question": "What attribute is used in the <a> tag to specify the destination URL?",
+      "answer": "href",
+      "explanation": "The href attribute specifies the URL of the page the link goes to."
+    },
+    {
+      "id": 6,
+      "category": "HTML",
+      "type": "objective",
+      "question": "Which attribute is used to add alternative text to an image for accessibility?",
+      "options": [
+        "title",
+        "src",
+        "alt",
+        "description",
+        "caption"
+      ],
+      "answer": "alt",
+      "explanation": "The alt attribute provides alternative text for an image if it cannot be displayed, and is essential for accessibility."
+    },
+    {
+      "id": 7,
+      "category": "CSS",
+      "type": "theory",
+      "question": "Write the CSS property used to change the background color of an element.",
+      "answer": "background-color",
+      "explanation": "The background-color property sets the background color of an element."
+    },
+    {
+      "id": 8,
+      "category": "CSS",
+      "type": "objective",
+      "question": "Which of the following is NOT a valid way to apply CSS to an HTML document?",
+      "options": [
+        "Inline styles using the style attribute",
+        "Internal stylesheet using the <style> tag",
+        "External stylesheet using the <link> tag",
+        "Using the <css> tag inside the <head>",
+        "All of the above are valid"
+      ],
+      "answer": "Using the <css> tag inside the <head>",
+      "explanation": "There is no <css> tag in HTML. CSS is applied via inline styles, internal <style> tags, or external <link> stylesheets."
+    },
+    {
+      "id": 9,
+      "category": "HTML",
+      "type": "objective",
+      "question": "The <blockquote> element is used to:",
+      "options": [
+        "Create a small quotation inline",
+        "Create a long quotation that is indented",
+        "Create a bold text effect",
+        "Create a comment in HTML",
+        "Create a hyperlink"
+      ],
+      "answer": "Create a long quotation that is indented",
+      "explanation": "The <blockquote> element is used for longer quotations that typically appear indented. For short inline quotes, use <q>."
+    },
+    {
+      "id": 10,
+      "category": "HTML",
+      "type": "theory",
+      "question": "Write the HTML tag used to create an ordered list.",
+      "answer": "<ol>",
+      "explanation": "The <ol> element defines an ordered list. Use <ul> for unordered lists."
+    },
+    {
+      "id": 11,
+      "category": "HTML",
+      "type": "objective",
+      "question": "Which attribute is used to open a link in a new browser tab or window?",
+      "options": [
+        "target=\"_blank\"",
+        "target=\"_new\"",
+        "open=\"new\"",
+        "rel=\"external\"",
+        "href=\"new\""
+      ],
+      "answer": "target=\"_blank\"",
+      "explanation": "The target attribute with the value \"_blank\" opens the linked document in a new tab or window."
+    },
+    {
+      "id": 12,
+      "category": "HTML",
+      "type": "objective",
+      "question": "What is the correct HTML syntax for creating a mailto link?",
+      "options": [
+        "<mail href=\"mailto:user@example.com\">",
+        "<a href=\"mailto:user@example.com\">",
+        "<a mailto=\"user@example.com\">",
+        "<email href=\"user@example.com\">",
+        "<link href=\"mailto:user@example.com\">"
+      ],
+      "answer": "<a href=\"mailto:user@example.com\">",
+      "explanation": "Mailto links use the <a> tag with href=\"mailto:email@address.com\" to open the user's default email client."
+    },
+    {
+      "id": 13,
+      "category": "HTML",
+      "type": "theory",
+      "question": "Write the HTML element used to embed a video file on a webpage.",
+      "answer": "<video>",
+      "explanation": "The <video> element is used to embed video content in HTML documents."
+    },
+    {
+      "id": 14,
+      "category": "HTML",
+      "type": "objective",
+      "question": "Which of the following is NOT a valid attribute for the <video> element?",
+      "options": [
+        "controls",
+        "autoplay",
+        "poster",
+        "muted",
+        "playback"
+      ],
+      "answer": "playback",
+      "explanation": "\"playback\" is not a valid attribute. Valid attributes include controls, autoplay, poster, muted, loop, and preload."
+    },
+    {
+      "id": 15,
+      "category": "HTML",
+      "type": "objective",
+      "question": "What is the correct HTML for creating a checkbox in a form?",
+      "options": [
+        "<input type=\"checkbox\">",
+        "<checkbox>",
+        "<input type=\"check\">",
+        "<check>",
+        "<input type=\"tick\">"
+      ],
+      "answer": "<input type=\"checkbox\">",
+      "explanation": "The <input> element with type=\"checkbox\" creates a checkbox input field."
+    },
+    {
+      "id": 16,
+      "category": "HTML",
+      "type": "theory",
+      "question": "Write the HTML tag used to group related form elements together.",
+      "answer": "<fieldset>",
+      "explanation": "The <fieldset> element is used to group related elements in a form, often with a <legend> as a caption."
+    },
+    {
+      "id": 17,
+      "category": "JavaScript",
+      "type": "objective",
+      "question": "The method used to attach an event listener to an element in vanilla JavaScript is:",
+      "options": [
+        "addEventListener()",
+        "attachEvent()",
+        "on()",
+        "listen()",
+        "eventHandler()"
+      ],
+      "answer": "addEventListener()",
+      "explanation": "addEventListener() is the standard method for attaching event handlers to DOM elements."
+    },
+    {
+      "id": 18,
+      "category": "JavaScript",
+      "type": "objective",
+      "question": "What does the JavaScript method `classList.toggle()` do when called on an element?",
+      "options": [
+        "It permanently adds the specified class to the element",
+        "It permanently removes the specified class from the element",
+        "It adds the class if it's not present, and removes it if it is",
+        "It toggles the visibility (show/hide) of the element",
+        "It swaps the element's current class with a new one"
+      ],
+      "answer": "It adds the class if it's not present, and removes it if it is",
+      "explanation": "The classList.toggle() method adds a class to an element if it doesn't exist, and removes it if it does. It's commonly used for hamburger menus and UI toggles."
+    },
+    {
+      "id": 19,
+      "category": "JavaScript",
+      "type": "theory",
+      "question": "Write the JavaScript code to select an HTML element with the id 'site-nav' and store it in a variable called `siteNav`.",
+      "answer": "const siteNav = document.getElementById(\"site-nav\");",
+      "explanation": "document.getElementById() is the standard method to select an element by its id. You can also use document.querySelector('#site-nav')."
+    },
+    {
+      "id": 20,
+      "category": "JavaScript",
+      "type": "theory",
+      "question": "Write the JavaScript code that adds a click event listener to a button with the id 'menu-button' to toggle a class called 'show-menu' on the element with the id 'site-nav'.",
+      "answer": "document.getElementById(\"menu-button\").addEventListener(\"click\", function() { document.getElementById(\"site-nav\").classList.toggle(\"show-menu\"); });",
+      "explanation": "This selects the button, attaches a click event, and toggles the 'show-menu' class on the navigation element whenever the button is clicked. This is the core logic for a hamburger menu."
+    }
+  ]
+}

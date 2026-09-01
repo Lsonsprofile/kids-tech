@@ -1,0 +1,306 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Colors */
+:root {
+    --background-color: rgb(238, 242, 220);
+    --main-color: rgb(5, 60, 5);
+    --hover-color: rgb(27, 7, 7);
+    --active-color: green;
+    --hero-background: rgb(245, 203, 203);
+    --white: white;
+    --text-color: #333333;
+    --card-background: #ffffff;
+    --border-color: #dddddd;
+}
+
+/* HTML */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Body */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+}
+
+/* Images */
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* Header */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    background-color: var(--white);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 100;
+}
+
+/* Logo */
+.logo {
+    display: block;
+}
+
+.logo img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+/* Navigation */
+.site-nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.site-nav a {
+    color: var(--main-color);
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.site-nav a:hover {
+    background-color: var(--hover-color);
+    color: var(--white);
+}
+
+/* Hamburger */
+.menu-button {
+    display: none;
+    background-color: var(--main-color);
+    color: var(--white);
+    border: none;
+    padding: 5px 10px;
+    font-size: 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.menu-button:hover {
+    background-color: var(--hover-color);
+}
+
+/* Hero */
+.hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 500px;
+    background-color: var(--hero-background);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.55);
+    color: var(--white);
+    padding: 35px;
+    border-radius: 15px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+/* Hero button */
+.hero-button {
+    display: inline-block;
+    background-color: var(--active-color);
+    color: var(--white);
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.hero-button:hover {
+    background-color: var(--hover-color);
+}
+
+/* Menu section */
+.menu-section {
+    padding: 60px 30px;
+    background-color: var(--background-color);
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-heading h2 {
+    color: var(--main-color);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.section-heading p {
+    font-size: 1.1rem;
+    color: #555555;
+}
+
+/* Food grid */
+.food-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+/* Food card */
+.food-card {
+    background-color: var(--card-background);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.food-card:hover {
+    transform: translateY(-5px);
+}
+
+.food-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Food info */
+.food-info {
+    padding: 20px;
+}
+
+.food-info h3 {
+    color: var(--main-color);
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.food-info p {
+    color: #555555;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+.price {
+    color: var(--active-color);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* About */
+.about-section {
+    background-color: var(--hero-background);
+    padding: 60px 30px;
+    text-align: center;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-content h2 {
+    color: var(--main-color);
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    color: #444444;
+}
+
+/* Footer */
+footer {
+    background-color: var(--main-color);
+    color: var(--white);
+    padding: 50px 30px 20px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.footer-column h2 {
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.footer-column p {
+    margin-bottom: 8px;
+    color: #dddddd;
+}
+
+.footer-column a {
+    display: block;
+    color: #dddddd;
+    text-decoration: none;
+    margin-bottom: 8px;
+}
+
+.footer-column a:hover {
+    color: var(--white);
+    text-decoration: underline;
+}
+
+.footer-column address {
+    font-style: normal;
+}
+
+/* Copyright */
+.copyright {
+    max-width: 1200px;
+    margin: 40px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: center;
+    color: #dddddd;
+}
+
+.active{
+    background-color: red;
+}

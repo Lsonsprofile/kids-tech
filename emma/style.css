@@ -1,0 +1,659 @@
+/* Selects every element on the page */
+* {
+    /* Removes the default outside spacing */
+    margin: 0;
+
+    /* Removes the default inside spacing */
+    padding: 0;
+
+    /* Makes width and height include padding and borders */
+    box-sizing: border-box;
+}
+
+
+/* Body */
+body {
+    /* Turns the body into a flex container */
+    display: flex;
+
+    /* Centers the content horizontally */
+    justify-content: center;
+
+    /* Centers the content vertically */
+    align-items: center;
+
+    /* Makes the body at least as tall as the viewport */
+    min-height: 100vh;
+
+    /* Adds 20px of space inside the body */
+    padding: 20px;
+
+    /* Sets the page background color */
+    background-color: #f4f4f4;
+
+    /* Sets the font used by the page */
+    font-family: sans-serif;
+}
+
+
+/* Main Game Container */
+.game-container {
+    /* Places the children in a row */
+    display: flex;
+
+    /* Vertically centers the children */
+    align-items: center;
+
+    /* Creates 40px of space between the children */
+    gap: 40px;
+
+    /* Adds 20px of space inside the container */
+    padding: 20px;
+
+    /* Rounds the corners of the container */
+    border-radius: 10px;
+
+    /* Sets the background color */
+    background-color: #045655;
+
+    /* Adds a shadow around the container */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Game Box */
+.game-box {
+    /* Makes this element a positioning reference for absolute children */
+    position: relative;
+
+    /* Rounds the corners */
+    border-radius: 12px;
+
+    /* Hides content that extends outside the rounded edges */
+    overflow: hidden;
+
+    /* Adds a soft shadow around the game box */
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Joystick Container */
+#joystick-container {
+    /* Allows absolute children to be positioned relative to this container */
+    position: relative;
+
+    /* Sets the container width to 100px */
+    width: 100px;
+
+    /* Sets the container height to 100px */
+    height: 100px;
+
+    /* Turns the container into a flex container */
+    display: flex;
+
+    /* Centers the joystick horizontally */
+    justify-content: center;
+
+    /* Centers the joystick vertically */
+    align-items: center;
+
+    /* Prevents the container from shrinking inside the flex layout */
+    flex-shrink: 0;
+
+    /* Adds 20px of space to the right */
+    margin-right: 20px;
+}
+
+
+/* Joystick Base */
+#joystick-base {
+    /* Makes this element a positioning reference for its children */
+    position: relative;
+
+    /* Sets the joystick base width */
+    width: 70px;
+
+    /* Sets the joystick base height */
+    height: 70px;
+
+    /* Turns the joystick base into a flex container */
+    display: flex;
+
+    /* Centers the handle horizontally */
+    justify-content: center;
+
+    /* Centers the handle vertically */
+    align-items: center;
+
+    /* Sets the base background color */
+    background-color: #ea5555;
+
+    /* Adds a 3px solid border */
+    border: 3px solid #660000;
+
+    /* Turns the square base into a circle */
+    border-radius: 50%;
+
+    /* Creates a shadow inside the joystick base */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Joystick Handle */
+#joystick-handle {
+    /* Allows the handle to be positioned independently */
+    position: absolute;
+
+    /* Places the handle's top position at 50% of its parent */
+    top: 50%;
+
+    /* Places the handle's left position at 50% of its parent */
+    left: 50%;
+
+    /* Sets the handle width */
+    width: 30px;
+
+    /* Sets the handle height */
+    height: 30px;
+
+    /* Sets the handle background color */
+    background-color: #133a03;
+
+    /* Adds a 2px solid border */
+    border: 2px solid #3d3902;
+
+    /* Turns the handle into a circle */
+    border-radius: 50%;
+
+    /* Changes the cursor to a grabbing cursor */
+    cursor: grab;
+
+    /* Adds a shadow underneath the handle */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+
+    /* Prevents browser touch actions from interfering with the joystick */
+    touch-action: none;
+
+    /* Moves the handle backward by half its own size to center it */
+    transform: translate(-50%, -50%);
+
+    /* Smoothly animates changes to the transform property */
+    transition: transform 0.2s ease-out;
+}
+
+
+/* Canvas */
+canvas {
+    /* Makes the canvas behave like a block-level element */
+    display: block;
+
+    /* Makes the canvas width fill its available space */
+    width: 100%;
+
+    /* Makes the canvas height fill its available space */
+    height: 100%;
+
+    /* Prevents the canvas from becoming wider than 90% of the viewport */
+    max-width: 90vw;
+
+    /* Prevents the canvas from becoming taller than 90% of the viewport */
+    max-height: 90vh;
+
+    /* Maintains the 600:400 width-to-height ratio */
+    aspect-ratio: 600 / 400;
+
+    /* Adds a 2px solid border around the canvas */
+    border: 2px solid #333;
+
+    /* Rounds the canvas corners */
+    border-radius: 12px;
+
+    /* Adds a soft shadow around the canvas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Help Button */
+.overlay-button {
+    /* Allows the button to be positioned manually */
+    position: absolute;
+
+    /* Places the button 80px above its positioned parent */
+    top: -80px;
+
+    /* Places the button 10px to the right of its normal edge */
+    right: -10px;
+
+    /* Sets the button width */
+    width: 30px;
+
+    /* Sets the button height */
+    height: 30px;
+
+    /* Turns the button into a flex container */
+    display: flex;
+
+    /* Centers the question mark horizontally */
+    justify-content: center;
+
+    /* Centers the question mark vertically */
+    align-items: center;
+
+    /* Removes the button's default inside spacing */
+    padding: 0;
+
+    /* Adds 3rem of outside spacing */
+    margin: 3rem;
+
+    /* Gives the button a semi-transparent dark background */
+    background-color: rgba(50, 50, 50, 0.7);
+
+    /* Makes the question mark white */
+    color: white;
+
+    /* Adds a thin semi-transparent border */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    /* Makes the button circular */
+    border-radius: 50%;
+
+    /* Sets the question mark size */
+    font-size: 1.2rem;
+
+    /* Makes the question mark bold */
+    font-weight: bold;
+
+    /* Changes the cursor to a pointer */
+    cursor: pointer;
+
+    /* Places the button above elements with lower z-index values */
+    z-index: 10;
+
+    /* Smoothly animates the background color and size changes */
+    transition:
+        background-color 0.2s ease,
+        transform 0.1s ease;
+}
+
+
+/* Help Button Hover */
+.overlay-button:hover {
+    /* Changes the background color when the mouse is over the button */
+    background-color: rgba(70, 70, 70, 0.9);
+}
+
+
+/* Help Button Click */
+.overlay-button:active {
+    /* Slightly shrinks the button while it is being clicked */
+    transform: scale(0.95);
+}
+
+
+/* Instructions Overlay */
+.game-overlay {
+    /* Positions the overlay relative to the game box */
+    position: absolute;
+
+    /* Sets the top, right, bottom, and left positions to 0 */
+    inset: 0;
+
+    /* Makes the overlay as wide as its parent */
+    width: 100%;
+
+    /* Makes the overlay as tall as its parent */
+    height: 100%;
+
+    /* Turns the overlay into a flex container */
+    display: flex;
+
+    /* Places the children vertically */
+    flex-direction: column;
+
+    /* Centers the children horizontally */
+    align-items: center;
+
+    /* Starts the content at the top */
+    justify-content: flex-start;
+
+    /* Allows vertical scrolling when the content is too tall */
+    overflow-y: auto;
+
+    /* Prevents horizontal scrolling */
+    overflow-x: hidden;
+
+    /* Adds 30px of vertical and 20px of horizontal inside spacing */
+    padding: 30px 20px;
+
+    /* Gives the overlay a mostly opaque black background */
+    background: rgba(0, 0, 0, 0.85);
+
+    /* Blurs the content behind the overlay */
+    backdrop-filter: blur(4px);
+
+    /* Makes the text white */
+    color: white;
+
+    /* Centers the text */
+    text-align: center;
+
+    /* Sets the default text size */
+    font-size: 1.1rem;
+
+    /* Sets the spacing between lines of text */
+    line-height: 1.6;
+
+    /* Rounds the corners */
+    border-radius: 12px;
+
+    /* Places the overlay above most other game elements */
+    z-index: 20;
+
+    /* Makes the overlay invisible */
+    opacity: 0;
+
+    /* Hides the overlay from normal visibility */
+    visibility: hidden;
+
+    /* Prevents the hidden overlay from receiving clicks */
+    pointer-events: none;
+
+    /* Smoothly animates the opacity and visibility */
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+
+/* Visible Instructions Overlay */
+.game-overlay.show {
+    /* Makes the overlay fully visible */
+    opacity: 1;
+
+    /* Makes the overlay visible */
+    visibility: visible;
+
+    /* Allows the visible overlay to receive clicks */
+    pointer-events: auto;
+}
+
+
+/* Instructions Heading */
+.game-overlay h2 {
+    /* Prevents the heading from shrinking */
+    flex-shrink: 0;
+
+    /* Adds 20px of space below the heading */
+    margin-bottom: 20px;
+
+    /* Sets the heading color */
+    color: #38bdf8;
+
+    /* Makes the heading larger */
+    font-size: 2.5rem;
+
+    /* Adds a glowing effect around the heading */
+    text-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+}
+
+
+/* Instructions Paragraphs */
+.game-overlay p {
+    /* Prevents the paragraphs from shrinking */
+    flex-shrink: 0;
+
+    /* Limits the paragraph width to 80% */
+    max-width: 80%;
+
+    /* Adds 10px of space below each paragraph */
+    margin-bottom: 10px;
+}
+
+
+/* Close Instructions Button */
+.overlay-close-button {
+    /* Allows the button to be positioned relative to its normal position */
+    position: relative;
+
+    /* Places the button above elements with lower z-index values */
+    z-index: 30;
+
+    /* Prevents flexbox from shrinking the button */
+    flex-shrink: 0;
+
+    /* Turns the button into a flex container */
+    display: flex;
+
+    /* Centers the button contents vertically */
+    align-items: center;
+
+    /* Centers the button contents horizontally */
+    justify-content: center;
+
+    /* Prevents the button from becoming narrower than 110px */
+    min-width: 110px;
+
+    /* Prevents the button from becoming shorter than 45px */
+    min-height: 45px;
+
+    /* Adds 30px of space above the button */
+    margin-top: 30px;
+
+    /* Adds 10px of space below the button */
+    margin-bottom: 10px;
+
+    /* Adds 10px of vertical and 25px of horizontal inside spacing */
+    padding: 10px 25px;
+
+    /* Sets the button background color */
+    background-color: #38bdf8;
+
+    /* Sets the button text color */
+    color: #0f172a;
+
+    /* Removes the default border */
+    border: none;
+
+    /* Rounds the button corners */
+    border-radius: 8px;
+
+    /* Sets the button text size */
+    font-size: 1.1rem;
+
+    /* Makes the button text bold */
+    font-weight: bold;
+
+    /* Changes the cursor to a pointer */
+    cursor: pointer;
+
+    /* Keeps the button visible */
+    visibility: visible;
+
+    /* Makes the button completely opaque */
+    opacity: 1;
+
+    /* Allows the button to receive clicks */
+    pointer-events: auto;
+
+    /* Smoothly animates the background color and transform */
+    transition:
+        background-color 0.2s ease,
+        transform 0.1s ease;
+}
+
+
+/* Close Button Hover */
+.overlay-close-button:hover {
+    /* Changes the button background color when hovered */
+    background-color: #0ea5e9;
+}
+
+
+/* Close Button Click */
+.overlay-close-button:active {
+    /* Slightly shrinks the button while being clicked */
+    transform: scale(0.95);
+}
+
+
+/* Mobile / Small Screens */
+@media (max-width: 600px) {
+
+    /* Body on small screens */
+    body {
+        /* Reduces the body padding */
+        padding: 10px;
+    }
+
+
+    /* Main game container on small screens */
+    .game-container {
+        /* Reduces the space between the joystick and game */
+        gap: 15px;
+
+        /* Reduces the container's inside spacing */
+        padding: 10px;
+    }
+
+
+    /* Joystick container on small screens */
+    #joystick-container {
+        /* Makes the joystick container smaller */
+        width: 80px;
+
+        /* Makes the joystick container shorter */
+        height: 80px;
+
+        /* Reduces the right margin */
+        margin-right: 5px;
+    }
+
+
+    /* Joystick base on small screens */
+    #joystick-base {
+        /* Makes the joystick base smaller */
+        width: 60px;
+
+        /* Makes the joystick base shorter */
+        height: 60px;
+    }
+
+
+    /* Joystick handle on small screens */
+    #joystick-handle {
+        /* Makes the handle smaller */
+        width: 26px;
+
+        /* Makes the handle shorter */
+        height: 26px;
+    }
+
+
+    /* Help button on small screens */
+    .overlay-button {
+        /* Moves the button closer to the top */
+        top: -8px;
+
+        /* Moves the button closer to the right */
+        right: -8px;
+
+        /* Makes the button slightly smaller */
+        width: 28px;
+
+        /* Makes the button slightly shorter */
+        height: 28px;
+
+        /* Makes the question mark smaller */
+        font-size: 1rem;
+    }
+
+
+    /* Instructions overlay on small screens */
+    .game-overlay {
+        /* Reduces the overlay's inside spacing */
+        padding: 20px 15px;
+
+        /* Makes the text slightly smaller */
+        font-size: 0.95rem;
+    }
+
+
+    /* Instructions heading on small screens */
+    .game-overlay h2 {
+        /* Reduces the space below the heading */
+        margin-bottom: 15px;
+
+        /* Makes the heading smaller */
+        font-size: 1.8rem;
+    }
+
+
+    /* Instructions paragraphs on small screens */
+    .game-overlay p {
+        /* Allows paragraphs to use more available width */
+        max-width: 95%;
+
+        /* Reduces the space below each paragraph */
+        margin-bottom: 8px;
+    }
+
+
+    /* Got It button on small screens */
+    .overlay-close-button {
+        /* Makes the button slightly narrower */
+        min-width: 100px;
+
+        /* Makes the button slightly shorter */
+        min-height: 42px;
+
+        /* Reduces the space above the button */
+        margin-top: 20px;
+
+        /* Keeps 10px of space below the button */
+        margin-bottom: 10px;
+
+        /* Reduces the button's inside spacing */
+        padding: 8px 20px;
+
+        /* Makes the button text smaller */
+        font-size: 1rem;
+    }
+}
+
+
+/* Very Small Screens */
+@media (max-height: 500px) {
+
+    /* Instructions overlay on short screens */
+    .game-overlay {
+        /* Reduces the top spacing */
+        padding-top: 15px;
+
+        /* Reduces the bottom spacing */
+        padding-bottom: 15px;
+    }
+
+
+    /* Instructions heading on short screens */
+    .game-overlay h2 {
+        /* Reduces the space below the heading */
+        margin-bottom: 10px;
+
+        /* Makes the heading smaller */
+        font-size: 1.6rem;
+    }
+
+
+    /* Instructions paragraphs on short screens */
+    .game-overlay p {
+        /* Reduces the space below each paragraph */
+        margin-bottom: 5px;
+    }
+
+
+    /* Close button on short screens */
+    .overlay-close-button {
+        /* Reduces the space above the button */
+        margin-top: 15px;
+    }
+}

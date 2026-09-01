@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coding Examination - HTML • CSS • JavaScript</title>
+  <title>Coding Quiz - HTML • CSS • JavaScript</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <!-- Header -->
   <header class="exam-header" id="exam-header" hidden>
     <div class="header-top">
-      <h1 class="exam-title">CODING EXAMINATION</h1>
+      <h1 class="exam-title">CODING QUIZ</h1>
       <p class="exam-subtitle">HTML • CSS • JAVASCRIPT</p>
     </div>
     <div class="header-info">
@@ -41,16 +41,16 @@
     <!-- Start / Instructions Screen -->
     <section id="start-screen" class="screen active">
       <div class="card start-card">
-        <h2>Examination Instructions</h2>
+        <h2>Quiz Instructions</h2>
         <ul class="rules-list">
-          <li>Do not copy examination content.</li>
+          <li>Do not copy Quiz content.</li>
           <li>Do not use right-click.</li>
-          <li>Do not leave the examination tab.</li>
+          <li>Do not leave the Quiz tab.</li>
           <li>Do not exit fullscreen mode.</li>
           <li>Do not use browser shortcuts to copy or inspect content.</li>
-          <li>Your examination activity may be recorded.</li>
+          <li>Your Quiz activity may be recorded.</li>
           <li>Your progress is automatically saved.</li>
-          <li>Repeated violations may result in examination termination.</li>
+          <li>Repeated violations may result in Quiz termination.</li>
         </ul>
 
         <div class="form-group">
@@ -58,12 +58,12 @@
           <input type="text" id="student-name-input" placeholder="e.g. Emmanuel Okoro" maxlength="60" autocomplete="name" required>
         </div>
 
-        <button type="button" id="start-exam-btn" class="btn btn-primary">Start Examination</button>
+        <button type="button" id="start-exam-btn" class="btn btn-primary">Start Quiz</button>
         <p class="note">Client-side protections are deterrents only. They do not provide complete security.</p>
       </div>
     </section>
 
-    <!-- Examination Screen -->
+    <!-- Quiz Screen -->
     <section id="exam-screen" class="screen" hidden>
       <div class="progress-container">
         <div class="progress-bar-bg">
@@ -101,7 +101,7 @@
     <!-- Results Screen -->
     <section id="results-screen" class="screen" hidden>
       <div class="card results-card">
-        <h2 id="results-title">Examination Complete</h2>
+        <h2 id="results-title">Quiz Complete</h2>
         <div class="results-grid">
           <div class="result-item">
             <span class="result-label">Student</span>
@@ -147,9 +147,9 @@
     <!-- Terminated Screen -->
     <section id="terminated-screen" class="screen" hidden>
       <div class="card terminated-card">
-        <h2>Examination Terminated</h2>
-        <p>The maximum number of examination violations has been reached.</p>
-        <p>Your examination has been submitted automatically.</p>
+        <h2>QIUZ Terminated</h2>
+        <p>The maximum number of Quiz violations has been reached.</p>
+        <p>Your Quiz has been submitted automatically.</p>
         <button type="button" id="terminated-new-btn" class="btn btn-primary">Start New Attempt</button>
       </div>
     </section>
@@ -167,7 +167,7 @@
   <div id="warning-overlay" class="overlay" hidden>
     <div class="warning-modal" role="alertdialog" aria-labelledby="warning-title" aria-describedby="warning-message">
       <div class="warning-icon">⚠</div>
-      <h3 id="warning-title">Examination Warning</h3>
+      <h3 id="warning-title">Quiz Warning</h3>
       <p id="warning-message">This action has been recorded.</p>
       <p class="warning-count-text">Warnings: <span id="modal-warning-count">1</span> / 3</p>
       <button type="button" id="warning-close-btn" class="btn btn-warning">Understood</button>
@@ -177,19 +177,19 @@
   <!-- Submit Confirmation Modal -->
   <div id="submit-overlay" class="overlay" hidden>
     <div class="modal" role="dialog" aria-labelledby="submit-title">
-      <h3 id="submit-title">Submit Examination?</h3>
+      <h3 id="submit-title">Submit Quiz?</h3>
       <p id="submit-message">You have answered X of Y questions.</p>
       <p id="unanswered-note" class="unanswered-note" hidden></p>
       <div class="modal-actions">
         <button type="button" id="continue-exam-btn" class="btn btn-secondary">Continue Exam</button>
-        <button type="button" id="confirm-submit-btn" class="btn btn-danger">Submit Examination</button>
+        <button type="button" id="confirm-submit-btn" class="btn btn-danger">Submit Quiz</button>
       </div>
     </div>
   </div>
 
   <!-- Restored Session Toast -->
   <div id="restore-toast" class="toast" hidden>
-    <strong>Examination Restored</strong>
+    <strong>Quiz Restored</strong>
     <span id="restore-message">Your previous session has been restored.</span>
   </div>
 

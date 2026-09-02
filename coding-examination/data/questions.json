@@ -33,8 +33,15 @@
     {
       "id": 3,
       "category": "HTML",
-      "type": "theory",
-      "question": "Write the correct HTML tag to create a paragraph.",
+      "type": "objective",
+      "question": "Which HTML element is used to define a paragraph of text?",
+      "options": [
+        "<paragraph>",
+        "<p>",
+        "<text>",
+        "<content>",
+        "<body>"
+      ],
       "answer": "<p>",
       "explanation": "The <p> element defines a paragraph in HTML."
     },
@@ -56,8 +63,15 @@
     {
       "id": 5,
       "category": "HTML",
-      "type": "theory",
-      "question": "What attribute is used in the <a> tag to specify the destination URL?",
+      "type": "objective",
+      "question": "Which attribute is used in the <a> tag to specify the destination URL?",
+      "options": [
+        "src",
+        "href",
+        "link",
+        "url",
+        "target"
+      ],
       "answer": "href",
       "explanation": "The href attribute specifies the URL of the page the link goes to."
     },
@@ -79,8 +93,15 @@
     {
       "id": 7,
       "category": "CSS",
-      "type": "theory",
-      "question": "Write the CSS property used to change the background color of an element.",
+      "type": "objective",
+      "question": "Which CSS property is used to change the background color of an element?",
+      "options": [
+        "color",
+        "bg-color",
+        "background",
+        "background-color",
+        "background-colour"
+      ],
       "answer": "background-color",
       "explanation": "The background-color property sets the background color of an element."
     },
@@ -103,22 +124,29 @@
       "id": 9,
       "category": "HTML",
       "type": "objective",
-      "question": "The <blockquote> element is used to:",
+      "question": "The <blockquote> element is used for which purpose?",
       "options": [
-        "Create a small quotation inline",
-        "Create a long quotation that is indented",
-        "Create a bold text effect",
-        "Create a comment in HTML",
-        "Create a hyperlink"
+        "Creating a small quotation inline",
+        "Creating a long quotation that is indented",
+        "Creating a bold text effect",
+        "Creating a comment in HTML",
+        "Creating a hyperlink"
       ],
-      "answer": "Create a long quotation that is indented",
+      "answer": "Creating a long quotation that is indented",
       "explanation": "The <blockquote> element is used for longer quotations that typically appear indented. For short inline quotes, use <q>."
     },
     {
       "id": 10,
       "category": "HTML",
-      "type": "theory",
-      "question": "Write the HTML tag used to create an ordered list.",
+      "type": "objective",
+      "question": "Which HTML element is used to create an ordered (numbered) list?",
+      "options": [
+        "<ul>",
+        "<ol>",
+        "<list>",
+        "<li>",
+        "<dl>"
+      ],
       "answer": "<ol>",
       "explanation": "The <ol> element defines an ordered list. Use <ul> for unordered lists."
     },
@@ -155,8 +183,15 @@
     {
       "id": 13,
       "category": "HTML",
-      "type": "theory",
-      "question": "Write the HTML element used to embed a video file on a webpage.",
+      "type": "objective",
+      "question": "Which HTML element is used to embed a video file on a webpage?",
+      "options": [
+        "<video>",
+        "<media>",
+        "<movie>",
+        "<embed>",
+        "<source>"
+      ],
       "answer": "<video>",
       "explanation": "The <video> element is used to embed video content in HTML documents."
     },
@@ -193,8 +228,15 @@
     {
       "id": 16,
       "category": "HTML",
-      "type": "theory",
-      "question": "Write the HTML tag used to group related form elements together.",
+      "type": "objective",
+      "question": "Which HTML element is used to group related form elements together with a visual border?",
+      "options": [
+        "<group>",
+        "<fieldset>",
+        "<form-group>",
+        "<section>",
+        "<div>"
+      ],
       "answer": "<fieldset>",
       "explanation": "The <fieldset> element is used to group related elements in a form, often with a <legend> as a caption."
     },
@@ -202,7 +244,7 @@
       "id": 17,
       "category": "JavaScript",
       "type": "objective",
-      "question": "The method used to attach an event listener to an element in vanilla JavaScript is:",
+      "question": "Which method is used to attach an event listener to a DOM element in vanilla JavaScript?",
       "options": [
         "addEventListener()",
         "attachEvent()",
@@ -231,18 +273,32 @@
     {
       "id": 19,
       "category": "JavaScript",
-      "type": "theory",
-      "question": "Write the JavaScript code to select an HTML element with the id 'site-nav' and store it in a variable called `siteNav`.",
-      "answer": "const siteNav = document.getElementById(\"site-nav\");",
-      "explanation": "document.getElementById() is the standard method to select an element by its id. You can also use document.querySelector('#site-nav')."
+      "type": "objective",
+      "question": "Which JavaScript method is used to select an HTML element by its id attribute?",
+      "options": [
+        "document.querySelector('#id')",
+        "document.getElementById('id')",
+        "document.getElementsByClassName('id')",
+        "document.getElementsByTagName('id')",
+        "Both document.querySelector('#id') and document.getElementById('id')"
+      ],
+      "answer": "Both document.querySelector('#id') and document.getElementById('id')",
+      "explanation": "Both document.getElementById('id') and document.querySelector('#id') can select an element by id. getElementById is faster, but querySelector is more flexible."
     },
     {
       "id": 20,
       "category": "JavaScript",
-      "type": "theory",
-      "question": "Write the JavaScript code that adds a click event listener to a button with the id 'menu-button' to toggle a class called 'show-menu' on the element with the id 'site-nav'.",
-      "answer": "document.getElementById(\"menu-button\").addEventListener(\"click\", function() { document.getElementById(\"site-nav\").classList.toggle(\"show-menu\"); });",
-      "explanation": "This selects the button, attaches a click event, and toggles the 'show-menu' class on the navigation element whenever the button is clicked. This is the core logic for a hamburger menu."
+      "type": "objective",
+      "question": "What does the following JavaScript code do when the button is clicked?\n\nconst menuButton = document.getElementById(\"menu-button\");\nconst siteNav = document.getElementById(\"site-nav\");\nmenuButton.addEventListener(\"click\", function() {\n    siteNav.classList.toggle(\"show-menu\");\n});",
+      "options": [
+        "It hides the navigation menu permanently",
+        "It shows the navigation menu permanently",
+        "It toggles (shows/hides) the navigation menu by adding/removing the 'show-menu' class",
+        "It changes the color of the navigation menu",
+        "It removes the navigation menu from the page"
+      ],
+      "answer": "It toggles (shows/hides) the navigation menu by adding/removing the 'show-menu' class",
+      "explanation": "This is the classic hamburger menu pattern. When the button is clicked, the 'show-menu' class is toggled on the navigation element, which is typically used with CSS to show/hide the menu on mobile devices."
     }
   ]
 }
